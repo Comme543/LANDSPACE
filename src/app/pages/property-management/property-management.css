@@ -1,0 +1,447 @@
+.management-page {
+  min-height: 100vh;
+  background: #f7f4ef;
+  padding: 50px 8% 70px;
+  box-sizing: border-box;
+}
+
+
+/* MANAGEMENT HEADER */
+
+.management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.management-header p {
+  color: #9a6842;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.management-header h1 {
+  font-size: 42px;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.management-header span {
+  color: #777;
+  line-height: 1.5;
+}
+
+
+/* ADD PROPERTY */
+
+.add-property-btn {
+  display: inline-block;
+  border: none;
+  background: #9a6842;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.add-property-btn:hover {
+  background: #805434;
+}
+
+
+/* FILTERS */
+
+.management-filters {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr auto auto;
+  gap: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.management-filters input,
+.management-filters select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  background: white;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.management-filters input:focus,
+.management-filters select:focus {
+  border-color: #9a6842;
+}
+
+.search-btn,
+.clear-btn {
+  border: none;
+  padding: 13px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.search-btn {
+  background: #9a6842;
+  color: white;
+}
+
+.search-btn:hover {
+  background: #805434;
+}
+
+.clear-btn {
+  background: #eee9e3;
+  color: #555;
+}
+
+.clear-btn:hover {
+  background: #e2dbd3;
+}
+
+
+/* PROPERTY SECTION */
+
+.property-management-section {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  margin: 0;
+}
+
+.section-title span {
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* TABLE */
+
+.management-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.management-table-header,
+.management-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 0.8fr 0.8fr 1.1fr;
+  gap: 18px;
+  align-items: center;
+  min-width: 900px;
+}
+
+.management-table-header {
+  padding: 13px 0;
+  color: #888;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+.management-row {
+  padding: 18px 0;
+  border-bottom: 1px solid #f0ede9;
+}
+
+.management-row:last-child {
+  border-bottom: none;
+}
+
+.management-row > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.management-row small {
+  color: #888;
+}
+
+.management-row strong,
+.management-row span {
+  overflow-wrap: anywhere;
+}
+
+
+/* STATUS */
+
+.status {
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.verified {
+  color: #76521e;
+  background: #f7ecd2;
+}
+
+.status.pending {
+  color: #9a5c12;
+  background: #fff0d8;
+}
+
+.status.active {
+  color: #287a43;
+  background: #e6f5ea;
+}
+
+
+/* ACTION BUTTONS */
+
+.actions {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.edit-btn {
+  border: 1px solid #9a6842;
+  background: white;
+  color: #9a6842;
+}
+
+.verify-btn {
+  border: none;
+  background: #287a43;
+  color: white;
+}
+
+.delete-btn {
+  border: 1px solid #d5b4b4;
+  background: white;
+  color: #b14b4b;
+}
+
+.edit-btn:hover {
+  background: #9a6842;
+  color: white;
+}
+
+.verify-btn:hover {
+  opacity: 0.85;
+}
+
+.delete-btn:hover {
+  background: #b14b4b;
+  color: white;
+}
+
+
+/* NO PROPERTIES */
+
+.no-properties {
+  text-align: center;
+  padding: 45px 20px;
+  color: #777;
+}
+
+.no-properties h3 {
+  margin: 0 0 8px;
+  color: #24211e;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+
+  .management-page {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .management-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-btn,
+  .clear-btn {
+    width: 100%;
+  }
+
+}
+
+
+/* SMALL TABLET */
+
+@media (max-width: 900px) {
+
+  .management-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .management-header h1 {
+    font-size: 38px;
+  }
+
+  .management-filters {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .management-page {
+    padding: 30px 5% 50px;
+  }
+
+  .management-header {
+    gap: 15px;
+  }
+
+  .management-header h1 {
+    font-size: 30px;
+  }
+
+  .management-header span {
+    display: block;
+    font-size: 14px;
+  }
+
+  .add-property-btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .management-filters {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .management-filters input,
+  .management-filters select,
+  .search-btn,
+  .clear-btn {
+    padding: 12px;
+  }
+
+  .property-management-section {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .section-title {
+    align-items: flex-start;
+  }
+
+  .section-title h2 {
+    font-size: 21px;
+  }
+
+  .management-table {
+    overflow-x: visible;
+  }
+
+  /* Hide desktop table header */
+  .management-table-header {
+    display: none;
+  }
+
+  /* Convert each property into a mobile card */
+  .management-row {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .management-row > div:first-child {
+    width: 100%;
+  }
+
+  .management-row > span,
+  .management-row > strong {
+    font-size: 14px;
+  }
+
+  .actions {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .actions button {
+    flex: 1;
+    padding: 9px;
+  }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+
+  .management-page {
+    padding: 25px 4% 40px;
+  }
+
+  .management-header h1 {
+    font-size: 27px;
+  }
+
+  .property-management-section {
+    padding: 17px;
+  }
+
+  .section-title h2 {
+    font-size: 19px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+}

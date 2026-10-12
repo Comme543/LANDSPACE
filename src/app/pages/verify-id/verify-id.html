@@ -1,0 +1,65 @@
+<div class="verify-page">
+
+  <div class="verify-card">
+
+    <div class="verify-logo">
+      <span class="logo-icon">L</span>
+      <span>LAND<span>SPACE</span></span>
+    </div>
+
+
+    <h1>
+      Verify Your Identity
+    </h1>
+
+
+    <p class="verify-subtitle">
+      Verify your government ID before creating your account.
+    </p>
+
+
+    <form
+      (ngSubmit)="verifyId()"
+    >
+
+      <label for="idNumber">
+        Government ID Number
+      </label>
+
+
+      <input
+        id="idNumber"
+        name="idNumber"
+        type="text"
+        placeholder="Enter your ID number"
+        [(ngModel)]="idNumber"
+        [disabled]="isVerifying"
+      >
+
+
+      <button
+        type="submit"
+        class="verify-btn"
+        [disabled]="isVerifying"
+      >
+
+        {{ isVerifying ? 'Verifying...' : 'Verify ID' }}
+
+      </button>
+
+    </form>
+
+
+    <p class="login-text">
+
+      Already have an account?
+
+      <a routerLink="/login">
+        Login
+      </a>
+
+    </p>
+
+  </div>
+
+</div>

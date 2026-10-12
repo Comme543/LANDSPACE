@@ -1,0 +1,180 @@
+<div class="add-property-page">
+
+  <div class="add-property-card">
+
+    <div class="page-title">
+
+      <p>LIST PROPERTY</p>
+
+      <h1>
+        {{ editId ? 'Edit Property' : 'Add New Property' }}
+      </h1>
+
+      <span>
+        {{
+          editId
+            ? 'Update your property details below.'
+            : 'Enter your property details below.'
+        }}
+      </span>
+
+    </div>
+
+
+    <form
+      [formGroup]="propertyForm"
+      (ngSubmit)="addProperty()">
+
+
+      <!-- PROPERTY NAME -->
+
+      <label for="propertyName">
+        Property Name
+      </label>
+
+      <input
+        id="propertyName"
+        type="text"
+        formControlName="propertyName"
+        placeholder="Enter property name"
+      >
+
+
+      <!-- LOCATION -->
+
+      <label for="location">
+        Location
+      </label>
+
+      <input
+        id="location"
+        type="text"
+        formControlName="location"
+        placeholder="Enter property location"
+      >
+
+
+      <!-- PROPERTY TYPE -->
+
+      <label for="propertyType">
+        Property Type
+      </label>
+
+      <select
+        id="propertyType"
+        formControlName="propertyType">
+
+        <option value="">
+          Select Property Type
+        </option>
+
+        <option value="Residential">
+          Residential
+        </option>
+
+        <option value="Commercial">
+          Commercial
+        </option>
+
+        <option value="Agricultural">
+          Agricultural
+        </option>
+
+      </select>
+
+
+      <!-- AREA -->
+
+      <label for="area">
+        Area
+      </label>
+
+      <input
+        id="area"
+        type="text"
+        formControlName="area"
+        placeholder="Example: 2400 Sq. Ft."
+      >
+
+
+      <!-- PRICE -->
+
+      <label for="price">
+        Price
+      </label>
+
+      <input
+        id="price"
+        type="text"
+        formControlName="price"
+        placeholder="Example: ₹45 Lakh"
+      >
+
+
+      <!-- DESCRIPTION -->
+
+      <label for="description">
+        Property Description
+      </label>
+
+      <textarea
+        id="description"
+        rows="5"
+        formControlName="description"
+        placeholder="Describe your property..."
+      ></textarea>
+
+
+      <!-- PROPERTY IMAGE -->
+
+      <label for="propertyImage">
+        Property Image
+      </label>
+
+      <input
+        id="propertyImage"
+        type="file"
+        accept="image/*"
+        (change)="onImageSelected($event)"
+      >
+
+
+      <!-- OWNER NAME -->
+
+      <label for="ownerName">
+        Owner Name
+      </label>
+
+      <input
+        id="ownerName"
+        type="text"
+        formControlName="ownerName"
+        placeholder="Enter owner name"
+      >
+
+
+      <!-- BUTTONS -->
+
+      <div class="form-actions">
+
+        <a
+          routerLink="/property-management"
+          class="cancel-btn">
+          Cancel
+        </a>
+
+        <button
+          type="submit"
+          class="submit-btn">
+
+          {{ editId ? 'Update Property' : 'Add Property' }}
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

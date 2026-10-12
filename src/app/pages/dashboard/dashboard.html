@@ -1,0 +1,305 @@
+<div class="dashboard-page">
+
+  <!-- DASHBOARD HEADER -->
+
+  <div class="dashboard-header">
+
+    <div>
+      <p>MY ACCOUNT</p>
+
+      <h1>Dashboard</h1>
+
+      <span>
+        Manage your properties and account activity.
+      </span>
+    </div>
+
+    <a
+      routerLink="/add-property"
+      class="add-property-btn">
+      + Add Property
+    </a>
+
+    <button
+      type="button"
+      class="logout-btn"
+      (click)="logout()">
+      Logout
+    </button>
+
+  </div>
+
+
+  <!-- STATS -->
+
+  <div class="stats-grid">
+
+    <!-- LISTED PROPERTIES -->
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        🏠
+      </div>
+
+      <div>
+
+        <h3>
+          {{ listedProperties }}
+        </h3>
+
+        <p>
+          Listed Properties
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- SAVED PROPERTIES -->
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        ❤️
+      </div>
+
+      <div>
+
+        <h3>
+          0
+        </h3>
+
+        <p>
+          Saved Properties
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- TOTAL VIEWS -->
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        👁
+      </div>
+
+      <div>
+
+        <h3>
+          0
+        </h3>
+
+        <p>
+          Total Views
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- VERIFIED PROPERTIES -->
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        ✓
+      </div>
+
+      <div>
+
+        <h3>
+          {{ verifiedProperties }}
+        </h3>
+
+        <p>
+          Verified Properties
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- MY PROPERTIES -->
+
+  <section class="dashboard-section">
+
+    <div class="section-heading">
+
+      <h2>
+        My Properties
+      </h2>
+
+      <a routerLink="/properties">
+        View All
+      </a>
+
+    </div>
+
+
+    <div class="property-table">
+
+
+      <!-- TABLE HEADER -->
+
+      <div class="table-header">
+
+        <span>
+          Property
+        </span>
+
+        <span>
+          Location
+        </span>
+
+        <span>
+          Price
+        </span>
+
+        <span>
+          Status
+        </span>
+
+      </div>
+
+
+      <!-- PROPERTY ROWS -->
+
+      <div
+        class="table-row"
+        *ngFor="let property of properties">
+
+        <div>
+
+          <strong>
+            {{ property.propertyName }}
+          </strong>
+
+          <small>
+            {{ property.area }}
+          </small>
+
+        </div>
+
+
+        <span>
+          {{ property.location }}
+        </span>
+
+
+        <strong>
+          {{ property.price }}
+        </strong>
+
+
+        <span
+          class="status verified">
+
+          {{ property.status || 'Verified' }}
+
+        </span>
+
+      </div>
+
+
+      <!-- NO PROPERTIES -->
+
+      <div
+        class="no-properties"
+        *ngIf="properties.length === 0">
+
+        <h3>
+          No Properties Added
+        </h3>
+
+        <p>
+          Add your first property to see it here.
+        </p>
+
+        <a
+          routerLink="/add-property"
+          class="add-property-btn">
+          + Add Property
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- RECENT ACTIVITY -->
+
+  <section class="dashboard-section">
+
+    <div class="section-heading">
+
+      <h2>
+        Recent Activity
+      </h2>
+
+    </div>
+
+
+    <div
+      class="activity-card"
+      *ngIf="properties.length > 0">
+
+      <span>
+        ✓
+      </span>
+
+      <div>
+
+        <strong>
+          Property added successfully
+        </strong>
+
+        <p>
+          Your property is now listed on LANDSPACE.
+        </p>
+
+      </div>
+
+      <small>
+        Recently
+      </small>
+
+    </div>
+
+
+    <div
+      class="activity-card"
+      *ngIf="properties.length === 0">
+
+      <span>
+        ℹ
+      </span>
+
+      <div>
+
+        <strong>
+          No recent activity
+        </strong>
+
+        <p>
+          Your property activities will appear here.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

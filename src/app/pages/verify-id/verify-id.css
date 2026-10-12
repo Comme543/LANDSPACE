@@ -1,0 +1,105 @@
+.verify-page {
+  min-height: 100vh;
+  background: #f7f4ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.verify-card {
+  width: 100%;
+  max-width: 460px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.verify-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.verify-logo span span {
+  color: #9a6842;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: #9a6842;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify-card h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.verify-subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.verify-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.verify-card label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.verify-card input {
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.verify-card input:focus {
+  border-color: #9a6842;
+}
+
+.verify-btn {
+  padding: 14px;
+  border: none;
+  border-radius: 7px;
+  background: #9a6842;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.verify-btn:hover {
+  background: #7e5132;
+}
+
+.login-text {
+  text-align: center;
+  margin-top: 25px;
+  color: #777;
+}
+
+.login-text a {
+  color: #9a6842;
+  text-decoration: none;
+  font-weight: 600;
+}

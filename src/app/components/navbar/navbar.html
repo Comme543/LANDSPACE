@@ -1,0 +1,145 @@
+<nav class="navbar">
+
+  <!-- LOGO -->
+
+  <div class="logo">
+
+    <span class="logo-icon">
+      L
+    </span>
+
+    <span>
+      LAND<span class="highlight">SPACE</span>
+    </span>
+
+  </div>
+
+
+  <!-- DESKTOP NAVIGATION -->
+
+  <div class="nav-links">
+
+    <a
+      routerLink="/"
+      (click)="closeMenu()">
+      Home
+    </a>
+
+    <a
+      routerLink="/properties"
+      (click)="closeMenu()">
+      Properties
+    </a>
+
+    <a
+      routerLink="/map"
+      (click)="closeMenu()">
+      Map
+    </a>
+
+    <a
+      routerLink="/dashboard"
+      (click)="closeMenu()">
+      Dashboard
+    </a>
+
+    <a
+      routerLink="/admin-dashboard"
+      (click)="closeMenu()">
+      Admin
+    </a>
+
+  </div>
+
+
+  <!-- DESKTOP ACTIONS -->
+
+  <div class="nav-actions">
+
+    <a
+      routerLink="/login"
+      class="login-btn">
+      Login
+    </a>
+
+    <a
+      routerLink="/register"
+      class="signup-btn">
+      Create Account
+    </a>
+
+  </div>
+
+
+  <!-- MOBILE MENU BUTTON -->
+
+  <button
+    type="button"
+    class="menu-btn"
+    (click)="toggleMenu()"
+    aria-label="Toggle navigation menu">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </button>
+
+
+  <!-- MOBILE MENU -->
+
+  <div
+    class="mobile-menu"
+    [class.open]="menuOpen">
+
+    <a
+      routerLink="/"
+      (click)="closeMenu()">
+      Home
+    </a>
+
+    <a
+      routerLink="/properties"
+      (click)="closeMenu()">
+      Properties
+    </a>
+
+    <a
+      routerLink="/map"
+      (click)="closeMenu()">
+      Map
+    </a>
+
+    <a
+      routerLink="/dashboard"
+      (click)="closeMenu()">
+      Dashboard
+    </a>
+
+    <a
+      routerLink="/admin-dashboard"
+      (click)="closeMenu()">
+      Admin
+    </a>
+
+    <div class="mobile-actions">
+
+      <a
+        routerLink="/login"
+        class="mobile-login"
+        (click)="closeMenu()">
+        Login
+      </a>
+
+      <a
+        routerLink="/register"
+        class="mobile-signup"
+        (click)="closeMenu()">
+        Create Account
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>

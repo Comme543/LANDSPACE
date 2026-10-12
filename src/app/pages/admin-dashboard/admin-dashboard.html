@@ -1,0 +1,176 @@
+<div class="admin-page">
+
+  <div class="admin-header">
+    <div>
+      <p>ADMIN PANEL</p>
+      <h1>Admin Dashboard</h1>
+      <span>Manage users, properties and verification activity.</span>
+    </div>
+
+    <button class="admin-btn">
+      + Add Property
+    </button>
+  </div>
+<a routerLink="/property-management" class="manage-property-btn">
+  Manage Properties
+</a>
+  <div class="admin-stats">
+
+    <div class="admin-stat-card">
+      <div class="admin-icon">🏠</div>
+      <div>
+        <h3>248</h3>
+        <p>Total Properties</p>
+      </div>
+    </div>
+
+    <div class="admin-stat-card">
+      <div class="admin-icon">👥</div>
+      <div>
+        <h3>1,284</h3>
+        <p>Registered Users</p>
+      </div>
+    </div>
+
+    <div class="admin-stat-card">
+      <div class="admin-icon">⏳</div>
+      <div>
+        <h3>18</h3>
+        <p>Pending Verification</p>
+      </div>
+    </div>
+
+    <div class="admin-stat-card">
+      <div class="admin-icon">✓</div>
+      <div>
+        <h3>230</h3>
+        <p>Verified Properties</p>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="admin-section">
+
+    <div class="section-title">
+      <h2>Recent Properties</h2>
+      <a routerLink="/properties">View All</a>
+    </div>
+
+    <div class="admin-table">
+
+      <div class="admin-table-header">
+        <span>Property</span>
+        <span>Owner</span>
+        <span>Location</span>
+        <span>Price</span>
+        <span>Status</span>
+      </div>
+
+      <div class="admin-table-row">
+
+        <div>
+          <strong>Residential Plot</strong>
+          <small>2400 Sq. Ft.</small>
+        </div>
+
+        <span>Rahul Sharma</span>
+
+        <span>Jaipur</span>
+
+        <strong>₹35 Lakh</strong>
+
+        <span class="status verified">Verified</span>
+
+      </div>
+
+      <div class="admin-table-row">
+
+        <div>
+          <strong>Premium Land</strong>
+          <small>3000 Sq. Ft.</small>
+        </div>
+
+        <span>Amit Verma</span>
+
+        <span>Ajmer Road</span>
+
+        <strong>₹45 Lakh</strong>
+
+        <span class="status pending">Pending</span>
+
+      </div>
+
+      <div class="admin-table-row">
+
+        <div>
+          <strong>Commercial Plot</strong>
+          <small>1800 Sq. Ft.</small>
+        </div>
+
+        <span>Rohit Singh</span>
+
+        <span>Vaishali Nagar</span>
+
+        <strong>₹65 Lakh</strong>
+
+        <span class="status active">Active</span>
+
+      </div>
+
+      <div class="admin-table-row">
+
+        <div>
+          <strong>Agricultural Land</strong>
+          <small>1.5 Acre</small>
+        </div>
+
+        <span>Vikas Meena</span>
+
+        <span>Chomu</span>
+
+        <strong>₹80 Lakh</strong>
+
+        <span class="status verified">Verified</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="admin-section">
+
+    <div class="section-title">
+      <h2>Verification Requests</h2>
+    </div>
+
+    <div class="verification-card">
+
+      <div>
+        <strong>Residential Plot</strong>
+        <p>Owner: Amit Verma · Ajmer Road</p>
+      </div>
+
+      <button class="review-btn">
+        Review
+      </button>
+
+    </div>
+
+    <div class="verification-card">
+
+      <div>
+        <strong>Commercial Property</strong>
+        <p>Owner: Suresh Kumar · Jaipur</p>
+      </div>
+
+      <button class="review-btn">
+        Review
+      </button>
+
+    </div>
+
+  </section>
+
+</div>

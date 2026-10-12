@@ -1,0 +1,251 @@
+<div class="management-page">
+
+  <div class="management-header">
+
+    <div>
+      <p>ADMIN PANEL</p>
+
+      <h1>Property Management</h1>
+
+      <span>
+        Manage and verify all listed properties.
+      </span>
+    </div>
+
+    <a
+      routerLink="/add-property"
+      class="add-property-btn">
+      + Add Property
+    </a>
+
+  </div>
+
+
+  <!-- SEARCH & FILTERS -->
+
+  <div class="management-filters">
+
+    <input
+      type="text"
+      placeholder="Search property, owner or location..."
+      [(ngModel)]="searchText"
+      (ngModelChange)="searchProperties()"
+    >
+
+
+    <select
+      [(ngModel)]="selectedType"
+      (ngModelChange)="searchProperties()">
+
+      <option value="All Properties">
+        All Properties
+      </option>
+
+      <option value="Residential">
+        Residential
+      </option>
+
+      <option value="Commercial">
+        Commercial
+      </option>
+
+      <option value="Agricultural">
+        Agricultural
+      </option>
+
+    </select>
+
+
+    <select
+      [(ngModel)]="selectedStatus"
+      (ngModelChange)="searchProperties()">
+
+      <option value="All Status">
+        All Status
+      </option>
+
+      <option value="Active">
+        Active
+      </option>
+
+      <option value="Verified">
+        Verified
+      </option>
+
+      <option value="Pending">
+        Pending
+      </option>
+
+    </select>
+
+
+    <button
+      type="button"
+      class="search-btn"
+      (click)="searchProperties()">
+
+      Search
+
+    </button>
+
+
+    <button
+      type="button"
+      class="clear-btn"
+      (click)="clearFilters()">
+
+      Clear
+
+    </button>
+
+  </div>
+
+
+  <!-- PROPERTY SECTION -->
+
+  <section class="property-management-section">
+
+    <div class="section-title">
+
+      <h2>
+        All Properties
+      </h2>
+
+      <span>
+        {{ filteredProperties.length }} Properties
+      </span>
+
+    </div>
+
+
+    <div class="management-table">
+
+
+      <!-- TABLE HEADER -->
+
+      <div class="management-table-header">
+
+        <span>
+          Property
+        </span>
+
+        <span>
+          Owner
+        </span>
+
+        <span>
+          Location
+        </span>
+
+        <span>
+          Price
+        </span>
+
+        <span>
+          Status
+        </span>
+
+        <span>
+          Action
+        </span>
+
+      </div>
+
+
+      <!-- PROPERTY ROWS -->
+
+      <div
+        class="management-row"
+        *ngFor="
+          let property of filteredProperties;
+          let i = index
+        ">
+
+
+        <div>
+
+          <strong>
+            {{ property.propertyName }}
+          </strong>
+
+          <small>
+            {{ property.area }}
+          </small>
+
+        </div>
+
+
+        <span>
+          {{ property.ownerName }}
+        </span>
+
+
+        <span>
+          {{ property.location }}
+        </span>
+
+
+        <strong>
+          {{ property.price }}
+        </strong>
+
+
+        <span
+          class="status verified">
+
+          {{ getStatus(property) }}
+
+        </span>
+
+
+        <div class="actions">
+
+          <button
+            type="button"
+            class="edit-btn"
+            (click)="editProperty(i)">
+
+            Edit
+
+          </button>
+
+
+          <button
+            type="button"
+            class="delete-btn"
+            (click)="deleteProperty(i)">
+
+            Delete
+
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- NO RESULTS -->
+
+      <div
+        class="no-properties"
+        *ngIf="
+          filteredProperties.length === 0
+        ">
+
+        <h3>
+          No Properties Found
+        </h3>
+
+        <p>
+          Try changing your search or filters.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+</div>

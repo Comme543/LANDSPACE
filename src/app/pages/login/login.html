@@ -1,0 +1,86 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <div class="login-logo">
+      <span class="logo-icon">L</span>
+      <span>LAND<span>SPACE</span></span>
+    </div>
+
+    <h1>Welcome Back</h1>
+
+    <p class="login-subtitle">
+      Login to manage your properties and account.
+    </p>
+
+    <form (ngSubmit)="login()">
+
+      <label for="email">
+        Email Address
+      </label>
+
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+      >
+
+      <label for="password">
+        Password
+      </label>
+
+      <input
+        id="password"
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Enter your password"
+      >
+
+      <div class="login-options">
+
+        <label class="remember">
+
+          <input
+            type="checkbox"
+            name="rememberMe"
+            [(ngModel)]="rememberMe"
+          >
+
+          Remember me
+
+        </label>
+
+        <a href="#">
+          Forgot Password?
+        </a>
+
+      </div>
+
+      <button
+        type="submit"
+        class="login-btn">
+        Login
+      </button>
+
+    </form>
+
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <p class="register-text">
+
+      Don't have an account?
+
+      <a routerLink="/verify-id">
+        Create Account
+      </a>
+
+    </p>
+
+  </div>
+
+</div>

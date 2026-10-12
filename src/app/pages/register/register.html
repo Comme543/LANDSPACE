@@ -1,0 +1,104 @@
+<div class="register-page">
+
+  <div class="register-card">
+
+    <div class="register-logo">
+      <span class="logo-icon">L</span>
+      <span>LAND<span>SPACE</span></span>
+    </div>
+
+    <h1>Create Your Account</h1>
+
+    <p class="register-subtitle">
+      Complete your details to create your LANDSPACE account.
+    </p>
+
+    <form (ngSubmit)="createAccount()">
+
+      <label for="fullName">
+        Full Name
+      </label>
+
+      <input
+        id="fullName"
+        type="text"
+        name="fullName"
+        [(ngModel)]="fullName"
+        placeholder="Enter your full name"
+      >
+
+
+      <label for="email">
+        Email Address
+      </label>
+
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+      >
+
+
+      <label for="mobile">
+        Mobile Number
+      </label>
+
+      <input
+        id="mobile"
+        type="tel"
+        name="mobile"
+        [(ngModel)]="mobile"
+        placeholder="Enter your mobile number"
+      >
+
+
+      <label for="password">
+        Password
+      </label>
+
+      <input
+        id="password"
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Create a password"
+      >
+
+
+      <label for="confirmPassword">
+        Confirm Password
+      </label>
+
+      <input
+        id="confirmPassword"
+        type="password"
+        name="confirmPassword"
+        [(ngModel)]="confirmPassword"
+        placeholder="Confirm your password"
+      >
+
+
+      <button
+        type="submit"
+        class="register-btn">
+        Create Account
+      </button>
+
+    </form>
+
+
+    <p class="login-text">
+
+      Already have an account?
+
+      <a routerLink="/login">
+        Login
+      </a>
+
+    </p>
+
+  </div>
+
+</div>

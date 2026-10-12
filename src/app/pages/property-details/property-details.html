@@ -1,0 +1,285 @@
+<div class="details-page">
+
+  <div class="back-section">
+    <a routerLink="/properties">
+      ← Back to Properties
+    </a>
+  </div>
+
+
+  <!-- LOADING -->
+
+  <div
+    class="loading-message"
+    *ngIf="loading">
+
+    <h2>Loading Property...</h2>
+
+    <p>
+      Please wait while property details are being loaded.
+    </p>
+
+  </div>
+
+
+  <!-- ERROR -->
+
+  <div
+    class="error-message"
+    *ngIf="!loading && errorMessage">
+
+    <h2>
+      {{ errorMessage }}
+    </h2>
+
+    <p>
+      We could not load this property.
+    </p>
+
+    <a routerLink="/properties">
+      Back to Properties
+    </a>
+
+  </div>
+
+
+  <!-- PROPERTY DETAILS -->
+
+  <div
+    class="details-layout"
+    *ngIf="!loading && property">
+
+    <div class="property-image">
+
+      <img
+        *ngIf="property.image"
+        [src]="property.image"
+        alt="Property Image"
+        class="property-detail-image"
+      >
+
+      <div
+        class="image-placeholder"
+        *ngIf="!property.image">
+
+        PROPERTY IMAGE
+
+      </div>
+
+    </div>
+
+
+    <div class="property-info">
+
+      <span class="verified-badge">
+        ✓ {{ property.status || 'Verified' }}
+      </span>
+
+
+      <h1>
+        {{ property.propertyName }}
+      </h1>
+
+
+      <p class="location">
+        📍 {{ property.location }}
+      </p>
+
+
+      <div class="price">
+        {{ property.price }}
+      </div>
+
+
+      <div class="property-details-grid">
+
+        <div>
+
+          <small>
+            Area
+          </small>
+
+          <strong>
+            {{ property.area }}
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <small>
+            Property Type
+          </small>
+
+          <strong>
+            {{ property.propertyType || 'Not specified' }}
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <small>
+            Ownership
+          </small>
+
+          <strong>
+            Freehold
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <small>
+            Status
+          </small>
+
+          <strong>
+            {{ property.status || 'Verified' }}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="contact-btn"
+        type="button">
+
+        Contact Seller
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- DESCRIPTION -->
+
+  <section
+    class="description-section"
+    *ngIf="!loading && property">
+
+    <h2>
+      Property Description
+    </h2>
+
+    <p>
+      {{ property.description || 'No description available.' }}
+    </p>
+
+  </section>
+
+
+  <!-- SELLER -->
+
+  <section
+    class="seller-section"
+    *ngIf="!loading && property">
+
+    <h2>
+      Seller Information
+    </h2>
+
+
+    <div class="seller-card">
+
+      <div class="seller-avatar">
+
+        {{ property.ownerName?.charAt(0) || '?' }}
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          {{ property.ownerName }}
+        </h3>
+
+        <p>
+          Verified Property Owner
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+
+  <section
+    class="features-section"
+    *ngIf="!loading && property">
+
+    <h2>
+      Property Features
+    </h2>
+
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+
+        <strong>
+          {{ property.area }}
+        </strong>
+
+        <span>
+          Property Area
+        </span>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <strong>
+          {{ property.propertyType || 'Not specified' }}
+        </strong>
+
+        <span>
+          Property Type
+        </span>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <strong>
+          Freehold
+        </strong>
+
+        <span>
+          Ownership
+        </span>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <strong>
+          {{ property.status || 'Verified' }}
+        </strong>
+
+        <span>
+          Property Status
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

@@ -1,0 +1,203 @@
+<div class="properties-page">
+
+  <section class="page-header">
+
+    <p>EXPLORE PROPERTIES</p>
+
+    <h1>
+      Find Your Perfect Property
+    </h1>
+
+    <span>
+      Browse verified land and property listings.
+    </span>
+
+  </section>
+
+
+  <!-- SEARCH & FILTERS -->
+  <section class="filters">
+
+    <input
+      type="text"
+      placeholder="Search location..."
+      [(ngModel)]="searchText"
+    >
+
+    <select [(ngModel)]="selectedType">
+
+      <option value="All Types">
+        All Types
+      </option>
+
+      <option value="Residential">
+        Residential
+      </option>
+
+      <option value="Commercial">
+        Commercial
+      </option>
+
+      <option value="Agricultural">
+        Agricultural
+      </option>
+
+    </select>
+
+
+    <select [(ngModel)]="selectedPrice">
+
+      <option value="Any Price">
+        Any Price
+      </option>
+
+      <option value="Under ₹20 Lakh">
+        Under ₹20 Lakh
+      </option>
+
+      <option value="₹20 - ₹50 Lakh">
+        ₹20 - ₹50 Lakh
+      </option>
+
+      <option value="₹50 Lakh - ₹1 Crore">
+        ₹50 Lakh - ₹1 Crore
+      </option>
+
+      <option value="Above ₹1 Crore">
+        Above ₹1 Crore
+      </option>
+
+    </select>
+
+
+    <button
+      type="button"
+      (click)="searchProperties()">
+
+      Search
+
+    </button>
+
+  </section>
+
+
+  <!-- PROPERTY GRID -->
+  <section class="property-grid">
+
+    <div
+      class="property-card"
+      *ngFor="let property of filteredProperties">
+
+
+      <!-- PROPERTY IMAGE -->
+      <img
+        *ngIf="property.image"
+        [src]="property.image"
+        class="property-img"
+        alt="Property Image"
+      >
+
+
+      <!-- DEFAULT IMAGE -->
+      <div
+        *ngIf="!property.image"
+        class="property-img">
+      </div>
+
+
+      <div class="property-content">
+
+
+        <!-- STATUS -->
+        <span class="verified">
+
+          ✓ {{ property.status || 'Verified' }}
+
+        </span>
+
+
+        <!-- PROPERTY NAME -->
+        <h2>
+
+          {{ property.propertyName }}
+
+        </h2>
+
+
+        <!-- LOCATION -->
+        <p>
+
+          {{ property.location }}
+
+        </p>
+
+
+        <!-- DETAILS -->
+        <div class="details">
+
+          <span>
+
+            {{ property.area }}
+
+          </span>
+
+          <span>
+
+            {{ property.propertyType }}
+
+          </span>
+
+        </div>
+
+
+        <!-- PRICE + VIEW DETAILS -->
+        <div class="card-bottom">
+
+          <strong>
+
+            {{ property.price }}
+
+          </strong>
+
+
+          <a
+            [routerLink]="[
+              '/property-details',
+              property.id
+            ]"
+            class="view-details">
+
+            View Details
+
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- NO RESULTS -->
+  <div
+    class="no-results"
+    *ngIf="filteredProperties.length === 0">
+
+    <h2>
+
+      No Properties Found
+
+    </h2>
+
+    <p>
+
+      Try changing your search or filters.
+
+    </p>
+
+  </div>
+
+</div>
